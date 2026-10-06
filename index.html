@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartPark - Vagas</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div><span class="eyebrow">SMARTPARK</span><h1>Estacionamento</h1></div>
+  <div class="public-badge"><A href="login.html" class="public-badge">Acesso Gerencial</A></div>
+</header>
+
+<main class="client-page">
+  <section class="hero">
+    <div>
+      <span class="eyebrow">VAGAS EM TEMPO REAL</span>
+      <h2>Encontre sua vaga antes de chegar.</h2>
+      <p>Consulte as vagas disponíveis no estacionamento do shopping.</p>
+    </div>
+    <div class="price-card">
+      <small>Preço atual</small>
+      <strong id="publicPrice">R$ 10,00</strong>
+      <span>por período inicial</span>
+    </div>
+  </section>
+
+  <section class="public-stats">
+    <div><strong id="freeCount">0</strong><span>Vagas livres</span></div>
+    <div><strong id="occupiedCount">0</strong><span>Ocupadas</span></div>
+    <div><strong id="totalCount">0</strong><span>Total</span></div>
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <div><h2>Mapa de vagas</h2><p>Verde = disponível · Vermelho = ocupada</p></div>
+      <span id="updated">Atualizado agora</span>
+    </div>
+    <div id="parkingMap" class="parking-map">
+      <div class="entrance">ENTRADA</div>
+      <div id="spotsLayer"></div>
+      <div class="exit">SAÍDA</div>
+    </div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

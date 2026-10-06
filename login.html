@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartPark - Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+<div class="login-card">
+  <span class="eyebrow">SMARTPARK</span>
+  <h1>Área do gerente</h1>
+  <p>Entre com suas credenciais para administrar o estacionamento.</p>
+  <label>Usuário</label>
+  <input id="user" type="text" placeholder="Digite o usuário">
+  <label>Senha</label>
+  <input id="password" type="password" placeholder="Digite a senha">
+  <button id="loginButton" class="primary">Entrar</button>
+  <p id="error" class="error"></p>
+  <a href="index.html">Voltar para área do cliente</a>
+</div>
+<script>
+document.getElementById("loginButton").onclick = () => {
+  const user = document.getElementById("user").value.trim();
+  const pass = document.getElementById("password").value;
+  if (user === "gerente" && pass === "1234") {
+    sessionStorage.setItem("smartpark_manager", "true");
+    location.href = "gerente.html";
+  } else {
+    document.getElementById("error").textContent = "Usuário ou senha incorretos.";
+  }
+};
+</script>
+</body>
+</html>

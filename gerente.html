@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartPark - Gerente</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div><span class="eyebrow">SMARTPARK</span><h1>Painel do gerente</h1></div>
+  <div class="manager-actions"><span class="manager-badge">Gerente</span><button id="logout">Sair</button></div>
+</header>
+
+<main class="manager-page">
+  <section class="manager-grid">
+    <div class="panel manager-card">
+      <span class="eyebrow">TARIFA</span>
+      <h2>Preço do estacionamento</h2>
+      <p>Somente o gerente pode alterar o valor mostrado aos clientes.</p>
+      <div class="price-editor">
+        <span>R$</span><input id="priceInput" type="number" min="0" step="0.50">
+        <button id="savePrice" class="primary">Salvar preço</button>
+      </div>
+      <div class="current-price">Preço publicado: <strong id="currentPrice">R$ 10,00</strong></div>
+    </div>
+
+    <div class="panel manager-card">
+      <span class="eyebrow">STATUS</span>
+      <h2>Resumo do estacionamento</h2>
+      <div class="manager-stats">
+        <div><strong id="freeCount">0</strong><span>Livres</span></div>
+        <div><strong id="occupiedCount">0</strong><span>Ocupadas</span></div>
+        <div><strong id="totalCount">0</strong><span>Total</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="section-title">
+      <div><h2>Controle manual das vagas</h2><p>Como o servidor ainda não está conectado, o gerente define o estado de cada vaga.</p></div>
+      <button id="releaseAll" class="secondary">Liberar todas</button>
+    </div>
+    <div class="control-note">Clique em uma vaga para alternar entre <b>livre</b> e <b>ocupada</b>. As alterações ficam salvas no navegador e aparecem na área pública.</div>
+    <div id="parkingMap" class="parking-map manager-map">
+      <div class="entrance">ENTRADA</div>
+      <div id="spotsLayer"></div>
+      <div class="exit">SAÍDA</div>
+    </div>
+  </section>
+
+  <section class="panel alerts">
+    <div class="section-title"><div><h2>Monitoramento</h2><p>Área preparada para futuros alertas das câmeras.</p></div></div>
+    <div class="alert-placeholder">✓ Nenhum alerta no momento.<br><small>Quando o sistema real de câmeras estiver conectado, alertas como falha de câmera ou possível pessoa/criança dentro de veículo poderão aparecer aqui.</small></div>
+  </section>
+</main>
+<script src="gerente.js"></script>
+</body>
+</html>
